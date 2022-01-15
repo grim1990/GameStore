@@ -86,7 +86,7 @@ namespace Game_Store
                                         GamesBase.ShowGames(games);
                                         GamesBase.BuyGame();
 
-                                        int input2 = Common.GetInt("Would you like to buy another game?", "Please select game ID number");
+                                        int input2 = Common.GetInt("Would you like to buy another game?", "Please select game ID numaaaaber");
                                         if (input2 == 0)
                                         {
                                             back1 = true;
