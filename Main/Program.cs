@@ -82,7 +82,7 @@ namespace Game_Store
                                     {
                                         Console.Clear();
                                         // Buy game
-                                        // not properly implemented ------------------------
+                                        // not properly implemented ---------------------------
                                         GamesBase.ShowGames(games);
                                         GamesBase.BuyGame();
 
