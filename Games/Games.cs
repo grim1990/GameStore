@@ -47,8 +47,6 @@ namespace Game_Store
             set => _price = value;
         }
 
-        
-
         public void SellGame()
         {
             List<Games> list = new List<Games>();
