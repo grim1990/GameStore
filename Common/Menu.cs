@@ -12,11 +12,24 @@ namespace Game_Store
         {
             Console.WriteLine("Choose action number:\n");
             Console.WriteLine("[1] Start Auction.");
-            Console.WriteLine("[2] Add item.");
-            Console.WriteLine("[3] Show items.");
-            Console.WriteLine("[4] Add customer.");
-            Console.WriteLine("[5] Show customers.");
+            Console.WriteLine("[2] Customer options.");
+            Console.WriteLine("[3] Games options.");
             Console.WriteLine("[0] Close application.");
+        }
+        public void MainMenuCustomers()
+        {
+            Console.WriteLine("Choose action number:\n");
+            Console.WriteLine("[1] Add customer.");
+            Console.WriteLine("[2] Show customers.");
+            Console.WriteLine("[0] Go back to the previouse menu.");
+        }
+        public void MainMenuGames()
+        {
+            Console.WriteLine("Choose action number:\n");
+            Console.WriteLine("[1] Buy game.");
+            Console.WriteLine("[2] Sell game.");
+            Console.WriteLine("[3] Show games.");
+            Console.WriteLine("[0] Go back to the previouse menu.");
         }
     }
 }

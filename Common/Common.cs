@@ -20,8 +20,9 @@ namespace Game_Store
             return result;
         }
 
-        public static string GetConfirm(string msg, string errMsg = "Input cannot be empty")
+        public static string GetConfirm(string msg, string errMsg = "Please choose Yes[Y] or No[N]")
         {
+            //not poperly implemented
             Console.Write(msg);
             string result;
             while (string.IsNullOrEmpty(result = Console.ReadLine()))
@@ -30,6 +31,25 @@ namespace Game_Store
                 {
                     Console.WriteLine(errMsg);
                     Console.Write(msg);
+                }
+                if (result == "y")
+                {
+                    Console.WriteLine(errMsg);
+                    Console.Write(msg.ToUpper());
+                }
+                if (result == "N")
+                {
+                    Console.WriteLine(errMsg);
+                    Console.Write(msg);
+                }
+                if (result == "n")
+                {
+                    Console.WriteLine(errMsg);
+                    Console.Write(msg.ToUpper());
+                }
+                else
+                {
+                    
                 }
             }
             return result;
@@ -44,7 +64,18 @@ namespace Game_Store
                 Console.WriteLine(errMsg);
                 Console.Write(msg);
             }
+            return result;
+        }
 
+        public static double GetDouble(string msg, string errMsg = "Input cannot be empty and has to be digit (00,00)")
+        {
+            double result = 00.00;
+            Console.Write(msg);
+            while (!double.TryParse(Console.ReadLine(), out result))
+            {
+                Console.WriteLine(errMsg);
+                Console.Write(msg);
+            }
             return result;
         }
     }

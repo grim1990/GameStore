@@ -14,11 +14,11 @@ namespace Game_Store
         private string _address;
         private string _loyalcard;
         private int _dateofbirth;
-
+        private double _wallet;
 
         public override string ToString()
         {
-            return $"\nID: {id}\nName: {_name}\nSurname: {_surname}\nAddress: {_address}\nDate of birth: {Dateofbirth}\n";
+            return $"Customer ID: {id}\nName: {_name}\nSurname: {_surname}\nAddress: {_address}\nDate of birth: {Dateofbirth}\nLoyal Card: {LoyalCard}\n";
         }
 
         public int id
@@ -50,11 +50,17 @@ namespace Game_Store
             get => _loyalcard;
             set => _loyalcard = value;
         }
-
+        
         public int Dateofbirth
         {
             get => _dateofbirth;
             set => _dateofbirth = value;
+        }
+
+        public double Wallet
+        {
+            get => _wallet;
+            set => _wallet = value;
         }
 
 
@@ -64,11 +70,12 @@ namespace Game_Store
             Customer customer = new Customer();
 
             customer.id = CustomerSample.IDGenerator();
-            customer.Name = Common.GetString("Type name: ");
-            customer.Surname = Common.GetString("Type surname: ");
-            customer.Address = Common.GetString("Type address: ");
-            customer.Dateofbirth = Common.GetInt("Type age: ");
-            customer.LoyalCard = Common.GetConfirm(": ");
+            customer.Name = Common.GetString("Enter name:");
+            customer.Surname = Common.GetString("Enter surname: ");
+            customer.Address = Common.GetString("Enter address: ");
+            customer.Dateofbirth = Common.GetInt("Enter age: ");
+            customer.Wallet = Common.GetDouble("Enter how much money does customer have: ");
+            customer.LoyalCard = Common.GetConfirm("Enter if customer got Loyal Card: Yes[Y] or No[N] ");
 
             list.Add(customer);
             CustomerBase.SaveOrUpdateCustomer(list);
