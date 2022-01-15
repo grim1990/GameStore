@@ -28,7 +28,7 @@ namespace Game_Store
             List<Item> items = new List<Item>();
 
             Item item0 = new Item();
-            item0.Name = "Młotekasdasdas";
+            item0.Name = "Młotek";
             item0.Description = "Służy do wbijania gwoździ";
             item0.Owner = "Karol Malinowski";
 
