@@ -47,7 +47,7 @@ namespace Game_Store
 
             Customer customer0 = new Customer();
             customer0.id = 1;
-            customer0.Name = "Karol";
+            customer0.Name = "KarolDDD";
             customer0.Surname = "Malinowski";
             customer0.Address = "ul. Sobieskiego 14";
             customer0.Dateofbirth = 26;
