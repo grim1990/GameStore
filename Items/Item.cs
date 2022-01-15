@@ -20,7 +20,6 @@ namespace Game_Store
         {
             return $"\nName: {_name}\nDescription: {_description}\nOwner: {_owner}\n";
         }
-
         public string Name
         {
             get => _name;

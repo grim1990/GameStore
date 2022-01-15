@@ -25,7 +25,7 @@ namespace Game_Store
 
             while (!exit)
             {
-                int input = Common.GetInt("Select: ", "Please select number from [0] to [4]");
+                int input = Common.GetInt("Select: ", "Please select number from [0] to [5]");
                 
                 switch (input)
                 {
