@@ -8,7 +8,7 @@ namespace Game_Store
 {
     public static class Common
     {
-        public static string GetString(string msg, string errMsg = "Input cannot be empty")
+        public static string GetString(string msg, string errMsg = "Input cannot be empty.")
         {
             Console.Write(msg);
             string result;
@@ -20,7 +20,7 @@ namespace Game_Store
             return result;
         }
 
-        public static string GetConfirm(string msg, string errMsg = "Please choose Yes[Y] or No[N]")
+        public static string GetConfirm(string msg, string errMsg = "Please choose Yes[Y] or No[N].")
         {
             //not poperly implemented
             Console.Write(msg);
@@ -55,7 +55,7 @@ namespace Game_Store
             return result;
         }
 
-        public static int GetInt(string msg, string errMsg = "Input cannot be empty and has to be digit")
+        public static int GetInt(string msg, string errMsg = "Input cannot be empty and has to be digit.")
         {
             int result = 0;
             Console.Write(msg);
@@ -67,7 +67,7 @@ namespace Game_Store
             return result;
         }
 
-        public static double GetDouble(string msg, string errMsg = "Input cannot be empty and has to be digit (00,00)")
+        public static double GetDouble(string msg, string errMsg = "Input cannot be empty and has to be digit (00,00).")
         {
             double result = 00.00;
             Console.Write(msg);

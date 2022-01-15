@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Game_Store
 {
     class GamesSample
-    {
+    {/*
         private static List<int> _list;
         private static GamesSample _instance;
 
@@ -39,7 +39,7 @@ namespace Game_Store
                 _list.Add(ID);
             }
             return ID;
-        }
+        }*/
 
         public static List<Games> CreateGames()
         {

@@ -29,7 +29,7 @@ namespace Game_Store
             Console.WriteLine("[1] Buy game.");
             Console.WriteLine("[2] Sell game.");
             Console.WriteLine("[3] Show games.");
-            Console.WriteLine("[0] Go back to the previouse menu.");
+            Console.WriteLine("[0] Return to the previouse menu.");
         }
     }
 }

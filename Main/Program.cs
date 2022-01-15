@@ -27,7 +27,7 @@ namespace Game_Store
             {
                 //show menu and switch case options
                 menu.MainMenu();
-                int input = Common.GetInt("Select: ", "Please select number from [0] to [3]");
+                int input = Common.GetInt("Select: ", "Please select number from [0] to [3].");
                 
                 switch (input)
                 {
@@ -43,7 +43,7 @@ namespace Game_Store
                         while (!back)
                         {
                             menu.MainMenuCustomers();
-                            int input1 = Common.GetInt("Select: ", "Please select number from [0] to [2]");
+                            int input1 = Common.GetInt("Select: ", "Please select number from [0] to [2].");
                             switch (input1)
                             {
                                 case 1:
@@ -62,7 +62,7 @@ namespace Game_Store
                                     back = true;
                                     break;
                                 default:
-                                    Console.WriteLine("Wrong input - try again");
+                                    Console.WriteLine("Wrong input - try again.");
                                     break;
                             }
                         }
@@ -73,32 +73,17 @@ namespace Game_Store
                         while (!back)
                         {
                             menu.MainMenuGames();
-                            int input1 = Common.GetInt("Select: ", "Please select number from [0] to [3]");
+                            int input1 = Common.GetInt("Select: ", "Please select number from [0] to [3].");
                             switch (input1)
                             {
                                 case 1:
-                                    bool back1 = false;
-                                    while (!back1)
-                                    {
-                                        Console.Clear();
-                                        // Buy game
-                                        // not properly implemented ---------------------------
-                                        GamesBase.ShowGames(games);
-                                        GamesBase.BuyGame();
-
-
-                                        int input2 = Common.GetInt("Would you like to buy another game?", "Please select game ID number");
-
-                                        if (input2 == 0)
-                                        {
-                                            back1 = true;
-                                        }
-                                    }
+                                    GamesBase.BuyGame();
                                     break;
                                 case 2:
                                     Console.Clear();
                                     // Sell game
-                                    game.SellGame();
+                                    GamesBase.SellGame();
+                                    Console.Clear();
                                     break;
                                 case 3:
                                     Console.Clear();
@@ -111,7 +96,7 @@ namespace Game_Store
                                     back = true;
                                     break;
                                 default:
-                                    Console.WriteLine("Wrong input - try again");
+                                    Console.WriteLine("Wrong input - try again.");
                                  break;
                             }
                         }
@@ -121,7 +106,7 @@ namespace Game_Store
                         exit = true;
                         break;
                     default:
-                        Console.WriteLine("Wrong input - try again");
+                        Console.WriteLine("Wrong input - try again.");
                         break;
                 }
                 back = false;
