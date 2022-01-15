@@ -58,7 +58,6 @@ namespace Game_Store
         }
 
 
-
         public void AddNewCustomer()
         {
             List<Customer> list = new List<Customer>();
@@ -69,7 +68,7 @@ namespace Game_Store
             customer.Surname = Common.GetString("Type surname: ");
             customer.Address = Common.GetString("Type address: ");
             customer.Dateofbirth = Common.GetInt("Type age: ");
-            customer.LoyalCard = Common.GetConfirm("Type age: ");
+            customer.LoyalCard = Common.GetConfirm(": ");
 
             list.Add(customer);
             CustomerBase.SaveOrUpdateCustomer(list);
