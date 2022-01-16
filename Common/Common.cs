@@ -20,7 +20,7 @@ namespace Game_Store
             return result;
         }
 
-        public static string GetConfirm(string msg, string errMsg = "\nPlease choose Yes[Y] or No[N].")
+        public static string GetConfirm(string msg, string errMsg = "Please choose Yes[Y] or No[N].")
         {
             Console.Write(msg);
             string result;
