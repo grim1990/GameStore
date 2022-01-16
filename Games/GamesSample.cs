@@ -39,7 +39,6 @@ namespace Game_Store
             game3.Type = "Survival";
             game3.Description = "gra survivalowo-eksploracyjna, w której wymagana jest kreatywność.";
             game3.Price = 99.99;
-
             Games game4 = new Games();
             game4.id = 5;
             game4.Name = "Raft";
