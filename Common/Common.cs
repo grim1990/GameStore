@@ -20,39 +20,23 @@ namespace Game_Store
             return result;
         }
 
-        public static string GetConfirm(string msg, string errMsg = "Please choose Yes[Y] or No[N].")
+        public static string GetConfirm(string msg, string errMsg = "\nPlease choose Yes[Y] or No[N].")
         {
-            //not poperly implemented
             Console.Write(msg);
             string result;
-            while (string.IsNullOrEmpty(result = Console.ReadLine()))
+            while (!string.IsNullOrEmpty(result = Console.ReadLine()))
             {
-                if (result == "Y")
+                if (result != "Y" && result != "y" && result != "N" && result != "n")
                 {
                     Console.WriteLine(errMsg);
                     Console.Write(msg);
-                }
-                if (result == "y")
-                {
-                    Console.WriteLine(errMsg);
-                    Console.Write(msg.ToUpper());
-                }
-                if (result == "N")
-                {
-                    Console.WriteLine(errMsg);
-                    Console.Write(msg);
-                }
-                if (result == "n")
-                {
-                    Console.WriteLine(errMsg);
-                    Console.Write(msg.ToUpper());
                 }
                 else
                 {
-                    
+                    return result.ToUpper();
                 }
             }
-            return result;
+            return result.ToUpper();
         }
 
         public static int GetInt(string msg, string errMsg = "Input cannot be empty and has to be digit.")
