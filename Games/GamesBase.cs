@@ -52,7 +52,6 @@ namespace Game_Store
 
         public static void AddSoldGame(List<Games> games)
         {
-            GamesBase.GetInstance();
             _games.AddRange(games);
         }
 
@@ -80,25 +79,31 @@ namespace Game_Store
                 ShowGames(_games);
                 
                 int input = Common.GetInt("Enter game indeks number to buy game or return to the previouse menu enter [0].\n", "Please select GAME INDEKS number.");
-                int input2 = Common.GetInt("Enter customer ID number who would like to buy a game or return to the previouse menu enter [0].\n", "Please select customer ID number.");
-
-
+                
                 var GameToRemove = _games.Where(game => game.id == input).ToArray();
-                var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
 
                 double newprice = 0;
-                foreach (var item in GameToRemove)
+
+                if (input != 0)
                 {
-                    newprice = item.Price;
-                    _games.Remove(item);
-                }
-                foreach (var item in ChooseCustomer)
-                {
-                    item.Wallet += newprice;
-                    CustomerBase._customers.Append(item);
+                    int input2 = Common.GetInt("Enter customer ID number who would like to buy a game or return to the previouse menu enter [0].\n", "Please select customer ID number.");
+                    if (input2 != 0)
+                    {
+                        foreach (var item in GameToRemove)
+                        {
+                            newprice = item.Price;
+                            _games.Remove(item);
+                        }
+                        var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
+                        foreach (var item in ChooseCustomer)
+                        {
+                            item.Wallet -= newprice;
+                            CustomerBase._customers.Append(item);
+                        }
+                    }
                 }
 
-                if (input == 0)
+                else if (input == 0)
                 {
                     back = true;
                 }
