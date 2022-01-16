@@ -51,7 +51,7 @@ namespace Game_Store
             }
         }
 
-        public static void AddSoldGame(List<Games> games)
+        public static void SaveOrUpdateSoldGame(List<Games> games)
         {
             _games.AddRange(games);
         }
@@ -88,7 +88,7 @@ namespace Game_Store
                             item.Wallet += newprice;
                             CustomerBase._customers.Append(item);
                         }
-                        GamesBase.AddSoldGame(list);
+                        GamesBase.SaveOrUpdateSoldGame(list);
                         back = true;
                 }
                 else if (input == 0)
