@@ -49,7 +49,7 @@ namespace Game_Store
                                 case 1:
                                     Console.Clear();
                                     // Add new customer
-                                    customer.AddNewCustomer();
+                                    CustomerBase.AddNewCustomer();
                                     break;
                                 case 2:
                                     Console.Clear();

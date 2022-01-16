@@ -21,7 +21,7 @@ namespace Game_Store
 
         public GamesBase()
         {
-            _games = GamesSample.CreateGames();
+            _games = GamesSample.CreateGamesSample();
         }
 
         public static int IDGenerator()

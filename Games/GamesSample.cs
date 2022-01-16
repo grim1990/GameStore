@@ -8,7 +8,7 @@ namespace Game_Store
 {
     class GamesSample
     {
-        public static List<Games> CreateGames()
+        public static List<Games> CreateGamesSample()
         {
             List<Games> game = new List<Games>();
 

@@ -62,23 +62,5 @@ namespace Game_Store
             get => _wallet;
             set => _wallet = value;
         }
-
-
-        public void AddNewCustomer()
-        {
-            List<Customer> list = new List<Customer>();
-            Customer customer = new Customer();
-
-            customer.id = CustomerSample.IDGenerator();
-            customer.Name = Common.GetString("Enter name:");
-            customer.Surname = Common.GetString("Enter surname: ");
-            customer.Address = Common.GetString("Enter address: ");
-            customer.Dateofbirth = Common.GetInt("Enter age: ");
-            customer.Wallet = Common.GetDouble("Enter how much money does customer have: ");
-            customer.LoyalCard = Common.GetConfirm("Enter if customer got Loyal Card: Yes[Y] or No[N] ");
-
-            list.Add(customer);
-            CustomerBase.SaveOrUpdateCustomer(list);
-        }
     }
 }

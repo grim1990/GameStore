@@ -8,6 +8,7 @@ namespace Game_Store
 {
     class CustomerSample
     {
+        /*
         private static List<int> _list;
         private static CustomerSample _instance;
 
@@ -23,25 +24,8 @@ namespace Game_Store
                 _instance = new CustomerSample();
             return _instance;
         }
-
-        public static int IDGenerator()
-        {
-                GetInstance();
-                Random rnd = new Random();
-                int ID = rnd.Next(3, 100); // creates a number between 3 and 100
-
-                if (_list.Contains(ID))
-                {
-                    //duplicate number
-                    ID = rnd.Next(101,9999);
-                }
-                else
-                {
-                    _list.Add(ID);
-                }
-                return ID;
-        }
-
+        */
+        
         public static List<Customer> CreateCustomer()
         {
             List<Customer> customers = new List<Customer>();

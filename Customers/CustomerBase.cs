@@ -24,6 +24,41 @@ namespace Game_Store
             _customers = CustomerSample.CreateCustomer();
         }
 
+        public static int IDGenerator()
+        {
+         //   GetInstance();
+            Random rnd = new Random();
+            int ID = rnd.Next(3, 100); // creates a number between 3 and 100
+
+            /* if (_list.Contains(ID))
+             {
+                 //duplicate number
+                 ID = rnd.Next(101,9999);
+             }
+             else
+             {
+                 _list.Add(ID);
+             }*/
+            return ID;
+        }
+
+        public static void AddNewCustomer()
+        {
+            List<Customer> list = new List<Customer>();
+            Customer customer = new Customer();
+
+            customer.id = CustomerBase.IDGenerator();
+            customer.Name = Common.GetString("Enter name:");
+            customer.Surname = Common.GetString("Enter surname: ");
+            customer.Address = Common.GetString("Enter address: ");
+            customer.Dateofbirth = Common.GetInt("Enter age: ");
+            customer.Wallet = Common.GetDouble("Enter how much money does customer have: ");
+            customer.LoyalCard = Common.GetConfirm("Enter if customer got Loyal Card: Yes[Y] or No[N] ");
+
+            list.Add(customer);
+            CustomerBase.SaveOrUpdateCustomer(list);
+        }
+
         public static void ShowCustomer(List<Customer> customers)
         {
             CustomerBase.GetInstance();
