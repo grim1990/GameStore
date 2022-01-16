@@ -105,7 +105,6 @@ namespace Game_Store
                         }
                     }
                 }
-
                 else if (input == 0)
                 {
                     back = true;
