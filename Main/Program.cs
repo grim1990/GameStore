@@ -19,9 +19,11 @@ namespace Game_Store
 
             Customer customer = new Customer();
             Games game = new Games();
+            Categories category = new Categories();
 
             List<Customer> customers = new List<Customer>();
             List<Games> games = new List<Games>();
+            List<Categories> categories = new List<Categories>();
 
             while (!exit)
             {
@@ -87,8 +89,8 @@ namespace Game_Store
                                     break;
                                 case 3:
                                     Console.Clear();
-                                    // Show all games
-                                    GamesBase.ShowGames(games);
+                                    // Show all categories
+                                    CategoriesBase.ShowCategories(categories);
                                     break;
                                 case 0:
                                     Console.Clear();
