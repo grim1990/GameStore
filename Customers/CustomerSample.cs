@@ -28,30 +28,31 @@ namespace Game_Store
             customer1.Address = "ul. Kościuszki 212";
             customer1.Dateofbirth = 25;
             customer1.LoyalCard = "N";
+            customer1.Wallet = 1.99;
 
-           /* Customer customer2 = new Customer();
-            customer2.id = 3;
-            customer2.Name = "Adam";
-            customer2.Surname = "Nowak";
-            customer2.Address = "ul. Konwaliowa 3";
-            customer2.Dateofbirth = 50;
-            customer2.LoyalCard = "N";
+            /* Customer customer2 = new Customer();
+             customer2.id = 3;
+             customer2.Name = "Adam";
+             customer2.Surname = "Nowak";
+             customer2.Address = "ul. Konwaliowa 3";
+             customer2.Dateofbirth = 50;
+             customer2.LoyalCard = "N";
 
-            Customer customer3 = new Customer();
-            customer3.id = 4;
-            customer3.Name = "Anna";
-            customer3.Surname = "Marecka";
-            customer3.Address = "ul. Jasna 2";
-            customer3.Dateofbirth = 21;
-            customer3.LoyalCard = "Y";
+             Customer customer3 = new Customer();
+             customer3.id = 4;
+             customer3.Name = "Anna";
+             customer3.Surname = "Marecka";
+             customer3.Address = "ul. Jasna 2";
+             customer3.Dateofbirth = 21;
+             customer3.LoyalCard = "Y";
 
-            Customer customer4 = new Customer();
-            customer4.id = 5;
-            customer4.Name = "Klaudia";
-            customer4.Surname = "Lis";
-            customer4.Address = "ul. Wiejska 23";
-            customer4.Dateofbirth = 41;
-            customer4.LoyalCard = "N";*/
+             Customer customer4 = new Customer();
+             customer4.id = 5;
+             customer4.Name = "Klaudia";
+             customer4.Surname = "Lis";
+             customer4.Address = "ul. Wiejska 23";
+             customer4.Dateofbirth = 41;
+             customer4.LoyalCard = "N";*/
 
             customers.Add(customer0);
             customers.Add(customer1);

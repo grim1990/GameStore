@@ -77,17 +77,19 @@ namespace Game_Store
                 CustomerBase.ShowCustomer(customers);
 
                 int input = Common.GetInt("Enter CUSTOMER ID number who sold game or return to the previouse menu [0].\n", "Please select CUSTOMER ID number.");
+
                 if (input != 0)
                 {
                     newprice = game.Price;
                     var CustomerSoldGame = CustomerBase._customers.Where(customer => customer.id == input).ToArray();
-                    foreach (var item in CustomerSoldGame)
-                    {
-                        item.Wallet += newprice;
-                        CustomerBase._customers.Append(item);
-                    }
-                    GamesBase.AddSoldGame(list);
-                    back = true;
+
+                        foreach (var item in CustomerSoldGame)
+                        {
+                            item.Wallet += newprice;
+                            CustomerBase._customers.Append(item);
+                        }
+                        GamesBase.AddSoldGame(list);
+                        back = true;
                 }
                 else if (input == 0)
                 {
@@ -100,7 +102,6 @@ namespace Game_Store
         public static void BuyGame()
         {
             bool back = false;
-           // bool back2 = false;
             while (!back)
             {
                 ShowGames(_games);
@@ -118,7 +119,7 @@ namespace Game_Store
                     int input2 = Common.GetInt("Enter CUSTOMER ID number who would like to buy a game or return to the previouse menu [0].\n", "Please select CUSTOMER ID number.");
 
                     var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
-
+                    
                     if (input2 != 0)
                     {
                         foreach (var game in GameToRemove)
@@ -132,15 +133,16 @@ namespace Game_Store
                                 Console.Clear();
                                 Console.WriteLine("\nCustomer {0} {1} don't have enouqh money !!!\n", custom.Name, custom.Surname);
                             }
-                            else if (custom.Wallet > newprice)
+                            else if (custom.Wallet >= newprice)
                             {
+                                Console.Clear();
                                 foreach (var game in GameToRemove)
                                 {
                                     _games.Remove(game);
+                                    Console.WriteLine("\nCustomer {0} {1} bought game {2} for {3} zł.\n", custom.Name, custom.Surname,game.Name,game.Price);
                                 }
                                 custom.Wallet -= newprice;
                                 CustomerBase._customers.Append(custom);
-                                Console.Clear();
                             }
                         }
                     }
