@@ -122,6 +122,7 @@ namespace Game_Store
                     
                     if (input2 != 0)
                     {
+                        Console.Clear();
                         foreach (var game in GameToRemove)
                         {
                             newprice = game.Price;
@@ -130,9 +131,9 @@ namespace Game_Store
                         {
                             if (custom.Wallet < newprice)
                             {
+                                Console.Clear();
                                 foreach (var game in GameToRemove)
                                 {
-                                    Console.Clear();
                                     Console.WriteLine("\nCustomer {0} {1} don't have enouqh money to buy {2} !!!\n", custom.Name, custom.Surname, game.Name);
                                 }
                             }
@@ -148,6 +149,7 @@ namespace Game_Store
                                 CustomerBase._customers.Append(custom);
                             }
                         }
+                        
                     }
                     else if (input2 == 0)
                     {
