@@ -86,6 +86,9 @@ namespace Game_Store
 
                 if (input != 0)
                 {
+                    Console.Clear();
+                    List<Customer> customers = new List<Customer>();
+                    CustomerBase.ShowCustomer(customers);
                     int input2 = Common.GetInt("Enter customer ID number who would like to buy a game or return to the previouse menu enter [0].\n", "Please select customer ID number.");
                     if (input2 != 0)
                     {
