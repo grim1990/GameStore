@@ -7,40 +7,7 @@ using System.Threading.Tasks;
 namespace Game_Store
 {
     class GamesSample
-    {/*
-        private static List<int> _list;
-        private static GamesSample _instance;
-
-        private GamesSample()
-        {
-            _list = new List<int>();
-        }
-        
-        private static GamesSample GetInstance()
-        {
-            if (_instance == null)
-                _instance = new GamesSample();
-            return _instance;
-        }
-        
-        public static int IDGenerator()
-        {
-            GetInstance();
-            Random rnd = new Random();
-            int ID = rnd.Next(3, 100); // creates a number between 3 and 100
-
-            if (_list.Contains(ID))
-            {
-                //duplicate number
-                ID = rnd.Next(101, 9999);
-            }
-            else
-            {
-                _list.Add(ID);
-            }
-            return ID;
-        }*/
-
+    {
         public static List<Games> CreateGames()
         {
             List<Games> game = new List<Games>();
