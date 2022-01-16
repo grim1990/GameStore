@@ -130,8 +130,11 @@ namespace Game_Store
                         {
                             if (custom.Wallet < newprice)
                             {
-                                Console.Clear();
-                                Console.WriteLine("\nCustomer {0} {1} don't have enouqh money !!!\n", custom.Name, custom.Surname);
+                                foreach (var game in GameToRemove)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("\nCustomer {0} {1} don't have enouqh money to buy {2} !!!\n", custom.Name, custom.Surname, game.Name);
+                                }
                             }
                             else if (custom.Wallet >= newprice)
                             {
