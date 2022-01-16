@@ -67,7 +67,34 @@ namespace Game_Store
             game.Price = Common.GetDouble("Enter price: ");
 
             list.Add(game);
-            GamesBase.AddSoldGame(list);
+
+            bool back = false;
+            while (!back)
+            {
+                Console.Clear();
+                List<Customer> customers = new List<Customer>();
+                CustomerBase.ShowCustomer(customers);
+
+                int input = Common.GetInt("Enter CUSTOMER ID number who sold game or return to the previouse menu [0].\n", "Please select CUSTOMER ID number.");
+                if (input != 0)
+                {
+                    double newprice = 0;
+                    newprice = game.Price;
+                    var CustomerSoldGame = CustomerBase._customers.Where(customer => customer.id == input).ToArray();
+                    foreach (var item in CustomerSoldGame)
+                    {
+                        item.Wallet += newprice;
+                        CustomerBase._customers.Append(item);
+                    }
+                    GamesBase.AddSoldGame(list);
+                    back = true;
+                }
+                else if (input == 0)
+                {
+                    back = true;
+                }
+            }
+            Console.Clear();
         }
 
         public static void BuyGame()
@@ -78,7 +105,7 @@ namespace Game_Store
                 Console.Clear();
                 ShowGames(_games);
                 
-                int input = Common.GetInt("Enter game indeks number to buy game or return to the previouse menu enter [0].\n", "Please select GAME INDEKS number.");
+                int input = Common.GetInt("Enter GAME INDEKS to buy game or return to the previouse menu [0].\n", "Please select GAME INDEKS number.");
                 
                 var GameToRemove = _games.Where(game => game.id == input).ToArray();
 
@@ -89,7 +116,7 @@ namespace Game_Store
                     Console.Clear();
                     List<Customer> customers = new List<Customer>();
                     CustomerBase.ShowCustomer(customers);
-                    int input2 = Common.GetInt("Enter customer ID number who would like to buy a game or return to the previouse menu enter [0].\n", "Please select customer ID number.");
+                    int input2 = Common.GetInt("Enter CUSTOMER ID number who would like to buy a game or return to the previouse menu [0].\n", "Please select CUSTOMER ID number.");
                     if (input2 != 0)
                     {
                         foreach (var item in GameToRemove)
