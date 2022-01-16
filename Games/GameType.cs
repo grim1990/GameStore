@@ -8,7 +8,7 @@ namespace Game_Store.Games
 {
     class GameType
     {
-        Type game1 = new Type();
+        Console.WriteLine("XDD");
 
     }
 
