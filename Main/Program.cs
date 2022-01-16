@@ -78,8 +78,8 @@ namespace Game_Store
                         while (!back)
                         {
                             menu.MainMenuGames();
-                            int input1 = Common.GetInt("Select: ", "Please select number from [0] to [3].");
-                            switch (input1)
+                            int input2 = Common.GetInt("Select: ", "Please select number from [0] to [3].");
+                            switch (input2)
                             {
                                 case 1:
                                     GamesBase.BuyGame();
@@ -92,8 +92,36 @@ namespace Game_Store
                                     break;
                                 case 3:
                                     Console.Clear();
+                                    while (!back)
+                                    {
+                                        menu.MainMenuCategories();
+                                        int input1 = Common.GetInt("Select: ", "Please select number from [0] to [4].");
+                                        switch (input1)
+                                        {
+                                            case 1:
+                                                CategoriesBase.ShowCategories(categories);
+                                                break;
+                                            case 2:
+                                                CategoriesBase.ShowCategories(categories);
+                                                break;
+                                            case 3:
+                                                CategoriesBase.ShowCategories(categories);
+                                                break;
+                                            case 4:
+                                                CategoriesBase.ShowCategories(categories);
+                                                break;
+                                            case 0:
+                                                Console.Clear();
+                                                back = true;
+                                                break;
+                                            default:
+                                                Console.WriteLine("Wrong Input, try again.");
+                                                break;
+                                        }
+                                    }
                                     // Show all categories
-                                    CategoriesBase.ShowCategories(categories);
+                                    //Console.WriteLine("Categories: \n");
+                                    //CategoriesBase.ShowCategories(categories);
                                     break;
                                 case 0:
                                     Console.Clear();

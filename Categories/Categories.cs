@@ -11,7 +11,7 @@ namespace Game_Store
         private string _name;
         public override string ToString()
         {
-            return $"Game indeks number: Name: {_name}\n";
+            return $" {_name}\n";
         }
 
         public string Name
