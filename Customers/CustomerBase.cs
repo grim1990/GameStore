@@ -26,7 +26,6 @@ namespace Game_Store
 
         public static int IDGenerator()
         {
-         //   GetInstance();
             Random rnd = new Random();
             int ID = rnd.Next(3, 100); // creates a number between 3 and 100
 
