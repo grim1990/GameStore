@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game_Store.Games
+namespace Game_Store
 {
     class GameType
     {
-        Console.WriteLine("XDD");
+       /* Console.WriteLine("XDD");*/
 
     }
-
 }

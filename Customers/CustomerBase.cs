@@ -10,7 +10,7 @@ namespace Game_Store
     {
 
         private static CustomerBase _instance;
-        private static List<Customer> _customers;
+        public static List<Customer> _customers;
 
         public static CustomerBase GetInstance()
         {
@@ -61,8 +61,6 @@ namespace Game_Store
 
         public static void ShowCustomer(List<Customer> customers)
         {
-            CustomerBase.GetInstance();
-
             customers = _customers;
             foreach (Customer c in customers)
             {
@@ -72,7 +70,6 @@ namespace Game_Store
 
         public static void SaveOrUpdateCustomer(List<Customer> customers)
         {
-            CustomerBase.GetInstance();
             _customers.AddRange(customers);
         }
     } 

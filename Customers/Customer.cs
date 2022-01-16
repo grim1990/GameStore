@@ -18,7 +18,7 @@ namespace Game_Store
 
         public override string ToString()
         {
-            return $"Customer ID: {id}\nName: {_name}\nSurname: {_surname}\nAddress: {_address}\nDate of birth: {Dateofbirth}\nLoyal Card: {LoyalCard}\n";
+            return $"Customer ID: {id}\nName: {_name}\nSurname: {_surname}\nAddress: {_address}\nDate of birth: {Dateofbirth}\nLoyal Card: {LoyalCard}\nCustomer Wallet: {Wallet}\n";
         }
 
         public int id

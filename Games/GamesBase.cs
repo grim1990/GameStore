@@ -43,7 +43,6 @@ namespace Game_Store
 
         public static void ShowGames(List<Games> games)
         {
-            GamesBase.GetInstance();
             games = _games;
             foreach (Games i in games)
             {
@@ -78,16 +77,27 @@ namespace Game_Store
             while (!back)
             {
                 Console.Clear();
-
                 ShowGames(_games);
+                
+                int input = Common.GetInt("Enter game indeks number to buy game or return to the previouse menu enter [0].\n", "Please select GAME INDEKS number.");
+                int input2 = Common.GetInt("Enter customer ID number who would like to buy a game or return to the previouse menu enter [0].\n", "Please select customer ID number.");
 
-                int input = Common.GetInt("Enter game indeks number to buy game or return to the previouse menu enter [0].\n", "Please select game ID number.");
 
-                var GameToRemove = _games.Where(i => i.id == input).ToArray();
+                var GameToRemove = _games.Where(game => game.id == input).ToArray();
+                var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
+
+                double newprice = 0;
                 foreach (var item in GameToRemove)
                 {
+                    newprice = item.Price;
                     _games.Remove(item);
                 }
+                foreach (var item in ChooseCustomer)
+                {
+                    item.Wallet += newprice;
+                    CustomerBase._customers.Append(item);
+                }
+
                 if (input == 0)
                 {
                     back = true;

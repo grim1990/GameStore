@@ -26,7 +26,7 @@ namespace Game_Store
             game1.Description = "Gra komputerowa z gatunku hack and slash.";
             game1.Price = 1.99;
 
-            Games game2 = new Games();
+           /* Games game2 = new Games();
             game2.id = 3;
             game2.Name = "Dead by Daylight";
             game2.Type = "Survival";
@@ -58,15 +58,15 @@ namespace Game_Store
             game6.Name = "GTA V";
             game6.Type = "Akcja";
             game6.Description = "Kolejna odsłona serii gangsterskich gier akcji mająca miejsce w mieście Los Santos.";
-            game6.Price = 39.99;
+            game6.Price = 39.99;*/
 
             game.Add(game0);
             game.Add(game1);
-            game.Add(game2);
+           /* game.Add(game2);
             game.Add(game3);
             game.Add(game4);
             game.Add(game5);
-            game.Add(game6);
+            game.Add(game6);*/
 
             return game;
         }

@@ -11,11 +11,14 @@ namespace Game_Store
             bool exit = false;
             bool back = false;
             Menu menu = new Menu();
-            
+
             //  CustomerAction customerAction = new CustomerAction();
             //   ItemAction itemAction = new ItemAction();
             //   AuctionAction auctionAction = new AuctionAction();
             //   Common.GenerateSampleData();
+
+            GamesBase.GetInstance();
+            CustomerBase.GetInstance();
 
             Customer customer = new Customer();
             Games game = new Games();

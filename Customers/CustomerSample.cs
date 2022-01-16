@@ -19,6 +19,7 @@ namespace Game_Store
             customer0.Address = "ul. Sobieskiego 14";
             customer0.Dateofbirth = 26;
             customer0.LoyalCard = "Y";
+            customer0.Wallet = 200;
 
             Customer customer1 = new Customer();
             customer1.id = 2;
@@ -28,7 +29,7 @@ namespace Game_Store
             customer1.Dateofbirth = 25;
             customer1.LoyalCard = "N";
 
-            Customer customer2 = new Customer();
+           /* Customer customer2 = new Customer();
             customer2.id = 3;
             customer2.Name = "Adam";
             customer2.Surname = "Nowak";
@@ -50,13 +51,13 @@ namespace Game_Store
             customer4.Surname = "Lis";
             customer4.Address = "ul. Wiejska 23";
             customer4.Dateofbirth = 41;
-            customer4.LoyalCard = "N";
+            customer4.LoyalCard = "N";*/
 
             customers.Add(customer0);
             customers.Add(customer1);
-            customers.Add(customer2);
+            /*customers.Add(customer2);
             customers.Add(customer3);
-            customers.Add(customer4);
+            customers.Add(customer4);*/
             return customers;
         }
     }
