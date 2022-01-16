@@ -120,6 +120,7 @@ namespace Game_Store
 
                     var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
                     
+
                     if (input2 != 0)
                     {
                         Console.Clear();
