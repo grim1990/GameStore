@@ -14,7 +14,7 @@ namespace Game_Store
 
             Games game0 = new Games();
             game0.id = 1;
-            game0.Name = "Gothic";
+            game0.Name = "Gothic,,,";
             game0.Type = "RPG";
             game0.Description = "Gra o bezimiennym.";
             game0.Price = 19.99;
