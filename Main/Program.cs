@@ -106,7 +106,7 @@ namespace Game_Store
                         exit = true;
                         break;
                     default:
-                        Console.WriteLine("Wrong inputOOOOOOOOOOOO - try again.");
+                        Console.WriteLine("Wrong input - try again.");
                         break;
                 }
                 back = false;
