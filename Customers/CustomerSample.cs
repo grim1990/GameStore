@@ -8,24 +8,6 @@ namespace Game_Store
 {
     class CustomerSample
     {
-        /*
-        private static List<int> _list;
-        private static CustomerSample _instance;
-
-        private CustomerSample()
-
-        {
-            _list = new List<int>();
-        }
-
-        private static CustomerSample GetInstance()
-        {
-            if (_instance == null)
-                _instance = new CustomerSample();
-            return _instance;
-        }
-        */
-        
         public static List<Customer> CreateCustomer()
         {
             List<Customer> customers = new List<Customer>();
