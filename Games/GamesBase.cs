@@ -97,7 +97,7 @@ namespace Game_Store
                         var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
                         foreach (var item in ChooseCustomer)
                         {
-                            item.Wallet += newprice;
+                            item.Wallet -= newprice;
                             CustomerBase._customers.Append(item);
                         }
                     }
