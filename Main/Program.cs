@@ -82,6 +82,7 @@ namespace Game_Store
                             switch (input2)
                             {
                                 case 1:
+                                    Console.Clear();
                                     GamesBase.BuyGame();
                                     break;
                                 case 2:

@@ -20,7 +20,7 @@ namespace Game_Store
             return result;
         }
 
-        public static string GetConfirm(string msg, string errMsg = "Please choose Yes[Y] or No[N].")
+        public static string GetConfirm(string msg, string errMsg = "Please enter Yes[Y] or No[N].")
         {
             Console.Write(msg);
             string result;
@@ -36,7 +36,7 @@ namespace Game_Store
                     return result.ToUpper();
                 }
             }
-            return result.ToUpper();
+            return result;
         }
 
         public static int GetInt(string msg, string errMsg = "Input cannot be empty and has to be digit.")

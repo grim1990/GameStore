@@ -10,6 +10,7 @@ namespace Game_Store
     {
         private static GamesBase _instance;
         private static List<Games> _games;
+        private static double newprice = 0;
         //private static List<int> _list = new List<int>();
 
         public static GamesBase GetInstance()
@@ -78,7 +79,6 @@ namespace Game_Store
                 int input = Common.GetInt("Enter CUSTOMER ID number who sold game or return to the previouse menu [0].\n", "Please select CUSTOMER ID number.");
                 if (input != 0)
                 {
-                    double newprice = 0;
                     newprice = game.Price;
                     var CustomerSoldGame = CustomerBase._customers.Where(customer => customer.id == input).ToArray();
                     foreach (var item in CustomerSoldGame)
@@ -100,44 +100,62 @@ namespace Game_Store
         public static void BuyGame()
         {
             bool back = false;
+           // bool back2 = false;
             while (!back)
             {
-                Console.Clear();
                 ShowGames(_games);
                 
                 int input = Common.GetInt("Enter GAME INDEKS to buy game or return to the previouse menu [0].\n", "Please select GAME INDEKS number.");
                 
                 var GameToRemove = _games.Where(game => game.id == input).ToArray();
-
-                double newprice = 0;
-
                 if (input != 0)
                 {
                     Console.Clear();
+
                     List<Customer> customers = new List<Customer>();
                     CustomerBase.ShowCustomer(customers);
+
                     int input2 = Common.GetInt("Enter CUSTOMER ID number who would like to buy a game or return to the previouse menu [0].\n", "Please select CUSTOMER ID number.");
+
+                    var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
+
                     if (input2 != 0)
                     {
-                        foreach (var item in GameToRemove)
+                        foreach (var game in GameToRemove)
                         {
-                            newprice = item.Price;
-                            _games.Remove(item);
+                            newprice = game.Price;
                         }
-                        var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
-                        foreach (var item in ChooseCustomer)
+                        foreach (var custom in ChooseCustomer)
                         {
-                            item.Wallet -= newprice;
-                            CustomerBase._customers.Append(item);
+                            if (custom.Wallet < newprice)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("\nCustomer {0} {1} don't have enouqh money !!!\n", custom.Name, custom.Surname);
+                            }
+                            else if (custom.Wallet > newprice)
+                            {
+                                foreach (var game in GameToRemove)
+                                {
+                                    _games.Remove(game);
+                                }
+                                custom.Wallet -= newprice;
+                                CustomerBase._customers.Append(custom);
+                                Console.Clear();
+                            }
                         }
+                    }
+                    else if (input2 == 0)
+                    {
+                        Console.Clear();
+                        back = true;
                     }
                 }
                 else if (input == 0)
                 {
+                    Console.Clear();
                     back = true;
                 }
             }
-            Console.Clear();
         }
     }
 }
