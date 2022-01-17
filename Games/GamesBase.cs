@@ -30,6 +30,7 @@ namespace Game_Store
             Random rnd = new Random();
             int ID = rnd.Next(8, 100); // creates a number between 8 and 100
             
+            // not implemented -----------------------------------------------
            /* if (_list.Contains(ID))
             {
                 //duplicate number
@@ -61,18 +62,24 @@ namespace Game_Store
             List<Games> list = new List<Games>();
             Games game = new Games();
 
-            game.id = IDGenerator();
-            game.Name = Common.GetString("Enter name: ");
-            game.Type = Common.GetString("Enter game type: ");
-            game.Description = Common.GetString("Enter description: ");
-            game.Price = Common.GetDouble("Enter price: ");
-
-            list.Add(game);
+            
 
             bool back = false;
             while (!back)
             {
+                Console.WriteLine("Enter what game customer would like to sell.\n");
+
+                game.id = IDGenerator();
+                game.Name = Common.GetString("Enter game name: ");
+                game.Type = Common.GetString("Enter game type: ");
+                game.Description = Common.GetString("Enter game description: ");
+                game.Price = Common.GetDouble("Enter game price: ");
+
+                list.Add(game);
+
+            
                 Console.Clear();
+
                 List<Customer> customers = new List<Customer>();
                 CustomerBase.ShowCustomer(customers);
 
@@ -83,20 +90,32 @@ namespace Game_Store
                     newprice = game.Price;
                     var CustomerSoldGame = CustomerBase._customers.Where(customer => customer.id == input).ToArray();
 
-                        foreach (var item in CustomerSoldGame)
-                        {
-                            item.Wallet += newprice;
-                            CustomerBase._customers.Append(item);
+                    foreach (var custom in CustomerSoldGame)
+                    {
+                       if (custom.LoyalCard == "Y")
+                       {
+                          newprice = newprice * 110 / 100;
+                          custom.Wallet += newprice;
+                          CustomerBase._customers.Append(custom);
+                          newprice = 0;
                         }
-                        GamesBase.SaveOrUpdateSoldGame(list);
-                        back = true;
+                       else
+                       {
+                           custom.Wallet += newprice;
+                           CustomerBase._customers.Append(custom);
+                           newprice = 0;
+                       }
+                    }
+                   GamesBase.SaveOrUpdateSoldGame(list);
+                   newprice = 0;
+                   back = true;
                 }
                 else if (input == 0)
                 {
+                    newprice = 0;
                     back = true;
                 }
             }
-            Console.Clear();
         }
 
         public static void BuyGame()
@@ -120,7 +139,6 @@ namespace Game_Store
 
                     var ChooseCustomer = CustomerBase._customers.Where(customer => customer.id == input2).ToArray();
                     
-
                     if (input2 != 0)
                     {
                         Console.Clear();
@@ -140,6 +158,7 @@ namespace Game_Store
                                     {
                                         Console.WriteLine("\nCustomer {0} {1} don't have enouqh money to buy {2} !!!\n", custom.Name, custom.Surname, game.Name);
                                     }
+                                    newprice = 0;
                                 }
                                 else if (custom.Wallet >= newprice)
                                 {
@@ -147,10 +166,11 @@ namespace Game_Store
                                     foreach (var game in GameToRemove)
                                     {
                                         _games.Remove(game);
-                                        Console.WriteLine("\nCustomer {0} {1} bought game {2} for {3} zł.\n", custom.Name, custom.Surname, game.Name, game.Price);
+                                        Console.WriteLine("\nCustomer {0} {1} bought game {2} for {3} zł.\n", custom.Name, custom.Surname, game.Name, Math.Truncate(newprice * 100) / 100);
                                     }
                                     custom.Wallet -= newprice;
                                     CustomerBase._customers.Append(custom);
+                                    newprice = 0;
                                 }
                             }
                             else
@@ -162,6 +182,7 @@ namespace Game_Store
                                     {
                                         Console.WriteLine("\nCustomer {0} {1} don't have enouqh money to buy {2} !!!\n", custom.Name, custom.Surname, game.Name);
                                     }
+                                    newprice = 0;
                                 }
                                 else if (custom.Wallet >= newprice)
                                 {
@@ -173,18 +194,21 @@ namespace Game_Store
                                     }
                                     custom.Wallet -= newprice;
                                     CustomerBase._customers.Append(custom);
+                                    newprice = 0;
                                 }
                             }
                         }
                     }
                     else if (input2 == 0)
                     {
+                        newprice = 0;
                         Console.Clear();
                         back = true;
                     }
                 }
                 else if (input == 0)
                 {
+                    newprice = 0;
                     Console.Clear();
                     back = true;
                 }

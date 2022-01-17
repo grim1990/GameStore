@@ -24,10 +24,6 @@ namespace Game_Store
             Categories category3 = new Categories();
             category3.Name = "Action";
 
-            
-
-
-
 
             category.Add(category0);
             category.Add(category1);

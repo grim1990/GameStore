@@ -29,6 +29,7 @@ namespace Game_Store
             Random rnd = new Random();
             int ID = rnd.Next(6, 100); // creates a number between 6 and 100
 
+            // not implemented -----------------------------------------------
             /* if (_list.Contains(ID))
              {
                  //duplicate number

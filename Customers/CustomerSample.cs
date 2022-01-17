@@ -28,7 +28,7 @@ namespace Game_Store
             customer1.Address = "ul. Kościuszki 212";
             customer1.Dateofbirth = 25;
             customer1.LoyalCard = "N";
-            customer1.Wallet = 1.99;
+            customer1.Wallet = 30;
 
             /* Customer customer2 = new Customer();
              customer2.id = 3;

@@ -39,7 +39,6 @@ namespace Game_Store
             Console.WriteLine("[3] FPS");
             Console.WriteLine("[4] Action");
             Console.WriteLine("[0] Return to the main menu.");
-
         }
     }
 }

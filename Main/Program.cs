@@ -12,11 +12,6 @@ namespace Game_Store
             bool back = false;
             Menu menu = new Menu();
 
-            //  CustomerAction customerAction = new CustomerAction();
-            //   ItemAction itemAction = new ItemAction();
-            //   AuctionAction auctionAction = new AuctionAction();
-            //   Common.GenerateSampleData();
-
             GamesBase.GetInstance();
             CustomerBase.GetInstance();
 
@@ -39,8 +34,6 @@ namespace Game_Store
                     case 1:
                         Console.Clear();
                         // not implemented------------------------------------------------
-                        // start new auction
-                        //   auctionAction.StartNewAuction();
                         break;
 
                     case 2://CUSTOMER OPTIONS
@@ -92,6 +85,7 @@ namespace Game_Store
                                     Console.Clear();
                                     break;
                                 case 3:
+                                    // not implemented -----------------------------------------------
                                     Console.Clear();
                                     while (!back)
                                     {
