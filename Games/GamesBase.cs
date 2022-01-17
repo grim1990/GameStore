@@ -130,27 +130,52 @@ namespace Game_Store
                         }
                         foreach (var custom in ChooseCustomer)
                         {
-                            if (custom.Wallet < newprice)
+                            if (custom.LoyalCard == "Y")
                             {
-                                Console.Clear();
-                                foreach (var game in GameToRemove)
+                                newprice = newprice * 90 / 100;
+                                if (custom.Wallet < newprice)
                                 {
-                                    Console.WriteLine("\nCustomer {0} {1} don't have enouqh money to buy {2} !!!\n", custom.Name, custom.Surname, game.Name);
+                                    Console.Clear();
+                                    foreach (var game in GameToRemove)
+                                    {
+                                        Console.WriteLine("\nCustomer {0} {1} don't have enouqh money to buy {2} !!!\n", custom.Name, custom.Surname, game.Name);
+                                    }
+                                }
+                                else if (custom.Wallet >= newprice)
+                                {
+                                    Console.Clear();
+                                    foreach (var game in GameToRemove)
+                                    {
+                                        _games.Remove(game);
+                                        Console.WriteLine("\nCustomer {0} {1} bought game {2} for {3} zł.\n", custom.Name, custom.Surname, game.Name, game.Price);
+                                    }
+                                    custom.Wallet -= newprice;
+                                    CustomerBase._customers.Append(custom);
                                 }
                             }
-                            else if (custom.Wallet >= newprice)
+                            else
                             {
-                                Console.Clear();
-                                foreach (var game in GameToRemove)
+                                if (custom.Wallet < newprice)
                                 {
-                                    _games.Remove(game);
-                                    Console.WriteLine("\nCustomer {0} {1} bought game {2} for {3} zł.\n", custom.Name, custom.Surname,game.Name,game.Price);
+                                    Console.Clear();
+                                    foreach (var game in GameToRemove)
+                                    {
+                                        Console.WriteLine("\nCustomer {0} {1} don't have enouqh money to buy {2} !!!\n", custom.Name, custom.Surname, game.Name);
+                                    }
                                 }
-                                custom.Wallet -= newprice;
-                                CustomerBase._customers.Append(custom);
+                                else if (custom.Wallet >= newprice)
+                                {
+                                    Console.Clear();
+                                    foreach (var game in GameToRemove)
+                                    {
+                                        _games.Remove(game);
+                                        Console.WriteLine("\nCustomer {0} {1} bought game {2} for {3} zł.\n", custom.Name, custom.Surname, game.Name, game.Price);
+                                    }
+                                    custom.Wallet -= newprice;
+                                    CustomerBase._customers.Append(custom);
+                                }
                             }
                         }
-                        
                     }
                     else if (input2 == 0)
                     {
