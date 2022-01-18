@@ -9,14 +9,13 @@ namespace Game_Store
     class GamesBase
     {
         private static GamesBase _instance;
-        private static List<Games> _games;
+        public static List<Games> _games;
         private static double newprice = 0;
-        //private static List<int> _list = new List<int>();
 
         public static GamesBase GetInstance()
         {
             if (_instance == null)
-                _instance = new GamesBase();
+            _instance = new GamesBase();
             return _instance;
         }
 

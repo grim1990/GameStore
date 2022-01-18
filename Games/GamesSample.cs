@@ -56,7 +56,7 @@ namespace Game_Store
             Games game6 = new Games();
             game6.id = 7;
             game6.Name = "GTA V";
-            game6.Type = "Akcja";
+            game6.Type = "Action";
             game6.Description = "Kolejna odsłona serii gangsterskich gier akcji mająca miejsce w mieście Los Santos.";
             game6.Price = 39.99;*/
 

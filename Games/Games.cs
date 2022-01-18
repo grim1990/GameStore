@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Game_Store
 {
-    class Games
+    [Serializable]
+    public class Games
     {
         private int _id;
         private string _name;

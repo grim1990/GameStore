@@ -12,15 +12,12 @@ namespace Game_Store
             bool back = false;
             Menu menu = new Menu();
 
-            GamesBase.GetInstance();
+            Serial_Deserial_Games.Deserialize();
+
+            //GamesBase.GetInstance();
             CustomerBase.GetInstance();
-
-            Customer customer = new Customer();
-            Games game = new Games();
-            Categories category = new Categories();
-
+            
             List<Customer> customers = new List<Customer>();
-            List<Games> games = new List<Games>();
             List<Categories> categories = new List<Categories>();
 
             while (!exit)
@@ -76,12 +73,14 @@ namespace Game_Store
                             {
                                 case 1:
                                     Console.Clear();
+                                    // Buy game
                                     GamesBase.BuyGame();
                                     break;
                                 case 2:
                                     Console.Clear();
                                     // Sell game
                                     GamesBase.SellGame();
+                                    
                                     Console.Clear();
                                     break;
                                 case 3:
@@ -129,8 +128,8 @@ namespace Game_Store
                             }
                         }
                         break;
-
                     case 0: //EXIT OPTION
+                        Serial_Deserial_Games.Serialize();
                         exit = true;
                         break;
                     default:

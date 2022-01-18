@@ -9,13 +9,13 @@ namespace Game_Store
     class CustomerBase
     {
 
-        private static CustomerBase _instance;
+        public static CustomerBase _instance;
         public static List<Customer> _customers;
 
         public static CustomerBase GetInstance()
         {
-            if (_instance == null)
-                _instance = new CustomerBase();
+            if (_customers == null)
+            _instance = new CustomerBase();
             return _instance;
         }
 
