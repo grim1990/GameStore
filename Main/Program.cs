@@ -17,7 +17,7 @@ namespace Game_Store
             CustomerBase.GetInstance();
             
             List<Customer> customers = new List<Customer>();
-            List<Categories> categories = new List<Categories>();
+           // List<Categories> categories = new List<Categories>();
             List<Games> games = new List<Games>();
 
             while (!exit)
@@ -88,40 +88,24 @@ namespace Game_Store
                                     while (!back)
                                     {
                                         menu.MainMenuCategories();
-                                        int input1 = Common.GetInt("Select: ", "Please select number from [0] to [4].");
+                                        int input1 = Common.GetInt("Select: ", "Please select number from [0] to [5].");
                                         switch (input1)
                                         {
                                             case 1:
                                                 Console.Clear();
-                                                Console.WriteLine("Our survival games: ");
-                                                Console.WriteLine("Dead By Daylight");
-                                                Console.WriteLine("Minecraft");
-                                                Console.WriteLine("Raft");
-                                                Console.WriteLine("The Forest");
+                                                GamesBase.ShowGameTypesSurvival();
                                                 break;
                                             case 2:
                                                 Console.Clear();
-                                                Console.WriteLine("Our RPG games: ");
-                                                Console.WriteLine("Gothic");
-                                                Console.WriteLine("Diablo");
-                                                Console.WriteLine("Wiedźmin 2");
-                                                Console.WriteLine("Wiedźmin 3");
+                                                GamesBase.ShowGameTypesRPG();
                                                 break;
                                             case 3:
                                                 Console.Clear();
-                                                Console.WriteLine("Our FPS games: ");
-                                                Console.WriteLine("CS:GO");
-                                                Console.WriteLine("Rainbow Six Siege");
-                                                Console.WriteLine("Overwatch");
-                                                Console.WriteLine("Call Of Duty: Modern Warfare");
+                                                GamesBase.ShowGameTypesFPS();
                                                 break;
                                             case 4:
                                                 Console.Clear();
-                                                Console.WriteLine("Our Action Games:");
-                                                Console.WriteLine("GTA V");
-                                                Console.WriteLine("Star Wars: Battlefront 2");
-                                                Console.WriteLine("Dying Light");
-                                                Console.WriteLine("Left 4 Dead 2");
+                                                GamesBase.ShowGameTypesAction();
                                                 break;
                                             case 5:
                                                 Console.Clear();

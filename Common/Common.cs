@@ -39,6 +39,25 @@ namespace Game_Store
             return result;
         }
 
+        public static string GetGameType(string msg, string errMsg = "Please enter correct game type [RPG],[Survival],[FPS],[Action].")
+        {
+            Console.Write(msg);
+            string result;
+            while (!string.IsNullOrEmpty(result = Console.ReadLine()))
+            {
+                if (result != "RPG" && result != "rpg" && result != "Survival" && result != "survival" && result != "Action" && result != "action" && result != "FPS" && result != "fps")
+                {
+                    Console.WriteLine(errMsg);
+                    Console.Write(msg);
+                }
+                else
+                {
+                    return result;
+                }
+            }
+            return result;
+        }
+
         public static int GetInt(string msg, string errMsg = "Input cannot be empty and has to be digit.")
         {
             int result = 0;

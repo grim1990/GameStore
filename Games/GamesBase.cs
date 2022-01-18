@@ -53,6 +53,70 @@ namespace Game_Store
             }
         }
 
+        public static void ShowGameTypesAction()
+        {
+            Console.WriteLine("Our Action Games: \n");
+            foreach (var item in GamesBase._games)
+            {
+                if (item.Type == "Action")
+                {
+                    Console.WriteLine(item);
+                }
+                else if (item.Type == "action")
+                {
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
+        public static void ShowGameTypesFPS()
+        {
+            Console.WriteLine("Our FPS games: \n");
+            foreach (var item in GamesBase._games)
+            {
+                if (item.Type == "FPS")
+                {
+                    Console.WriteLine(item);
+                }
+                else if (item.Type == "fps")
+                {
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
+        public static void ShowGameTypesRPG()
+        {
+            Console.WriteLine("Our RPG games: \n");
+            foreach (var item in GamesBase._games)
+            {
+                if (item.Type == "RPG")
+                {
+                    Console.WriteLine(item);
+                }
+                else if (item.Type == "rpg")
+                {
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
+        public static void ShowGameTypesSurvival()
+        {
+            Console.WriteLine("Our survival games: \n");
+            foreach (var item in GamesBase._games)
+            {
+                if (item.Type == "Survival")
+                {
+                    Console.WriteLine(item);
+                }
+                else if (item.Type == "survival")
+                {
+                    Console.WriteLine(item);
+                }
+            }
+        }
+
         public static void SaveOrUpdateSoldGame(List<Games> games)
         {
             _games.AddRange(games);
@@ -71,8 +135,8 @@ namespace Game_Store
                 Console.WriteLine("Enter what game customer would like to sell.\n");
 
                 game.id = IDGenerator();
+                game.Type = Common.GetGameType("Enter game type(RPG,Survival,FPS,Action): ");
                 game.Name = Common.GetString("Enter game name: ");
-                game.Type = Common.GetString("Enter game type: ");
                 game.Description = Common.GetString("Enter game description: ");
                 game.Price = Common.GetDouble("Enter game price: ");
 

@@ -57,7 +57,7 @@ namespace Game_Store
              Games game6 = new Games();
              game6.id = 7;
              game6.Name = "GTA V";
-             game6.Type = "Akcja";
+             game6.Type = "Action";
              game6.Description = "Kolejna odsłona serii gangsterskich gier akcji mająca miejsce w mieście Los Santos.";
              game6.Price = 39.99;
 
@@ -106,21 +106,21 @@ namespace Game_Store
             Games game13 = new Games();
             game13.id = 14;
             game13.Name = "Star Wars: Battlefront 2";
-            game13.Type = "Akcja";
+            game13.Type = "Action";
             game13.Description = "Kolejna odsłona gier osadzonych w świecie Gwiezdnych Wojen.";
             game13.Price = 39.99;
 
             Games game14 = new Games();
             game14.id = 15;
             game14.Name = "Dying Light";
-            game14.Type = "Akcja";
+            game14.Type = "Action";
             game14.Description = "Walka w mieście objętym kwarantanną.";
             game14.Price = 49.99;
 
             Games game15 = new Games();
             game15.id = 16;
             game15.Name = "Left 4 Dead 2";
-            game15.Type = "Akcja";
+            game15.Type = "Action";
             game15.Description = "Kooperacyjna gra, w której mierzymy się przeciw zombie.";
             game15.Price = 39.99;
 
