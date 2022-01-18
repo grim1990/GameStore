@@ -124,13 +124,12 @@ namespace Game_Store
             game15.Description = "Kooperacyjna gra, w której mierzymy się przeciw zombie.";
             game15.Price = 39.99;
 
-
             game.Add(game0);
             game.Add(game1);
             game.Add(game2);
-             game.Add(game3);
-             game.Add(game4);
-             game.Add(game5);
+            game.Add(game3);
+            game.Add(game4);
+            game.Add(game5);
             game.Add(game6);
             game.Add(game7);
             game.Add(game8);
@@ -141,7 +140,6 @@ namespace Game_Store
             game.Add(game13);
             game.Add(game14);
             game.Add(game15);
-
 
             return game;
         }

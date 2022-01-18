@@ -14,11 +14,12 @@ namespace Game_Store
 
             Serial_Deserial_Games.Deserialize();
 
-            //GamesBase.GetInstance();
+           // GamesBase.GetInstance();
             CustomerBase.GetInstance();
             
             List<Customer> customers = new List<Customer>();
             List<Categories> categories = new List<Categories>();
+            List<Games> games = new List<Games>();
 
             while (!exit)
             {
@@ -109,6 +110,7 @@ namespace Game_Store
                                                 Console.WriteLine("Wiedźmin 3");
                                                 break;
                                             case 3:
+                                                Console.Clear();
                                                 Console.WriteLine("Our FPS games: ");
                                                 Console.WriteLine("CS:GO");
                                                 Console.WriteLine("Rainbow Six Siege");
@@ -116,6 +118,7 @@ namespace Game_Store
                                                 Console.WriteLine("Call Of Duty: Modern Warfare");
                                                 break;
                                             case 4:
+                                                Console.Clear();
                                                 Console.WriteLine("Our Action Games:");
                                                 Console.WriteLine("GTA V");
                                                 Console.WriteLine("Star Wars: Battlefront 2");
@@ -123,7 +126,9 @@ namespace Game_Store
                                                 Console.WriteLine("Left 4 Dead 2");
                                                 break;
                                             case 5:
+                                                Console.Clear();
                                                 GamesBase.ShowGames(games);
+                                                break;
                                             case 0:
                                                 Console.Clear();
                                                 back = true;

@@ -45,6 +45,7 @@ namespace Game_Store
         public static void ShowGames(List<Games> games)
         {
             games = _games;
+
             foreach (Games i in games)
             {
                 Console.WriteLine(i);
