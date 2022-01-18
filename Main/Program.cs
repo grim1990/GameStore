@@ -94,17 +94,37 @@ namespace Game_Store
                                         switch (input1)
                                         {
                                             case 1:
-                                                CategoriesBase.ShowCategories(categories);
+                                                Console.Clear();
+                                                Console.WriteLine("Our survival games: ");
+                                                Console.WriteLine("Dead By Daylight");
+                                                Console.WriteLine("Minecraft");
+                                                Console.WriteLine("Raft");
+                                                Console.WriteLine("The Forest");
                                                 break;
                                             case 2:
-                                                CategoriesBase.ShowCategories(categories);
+                                                Console.Clear();
+                                                Console.WriteLine("Our RPG games: ");
+                                                Console.WriteLine("Gothic");
+                                                Console.WriteLine("Diablo");
+                                                Console.WriteLine("Wiedźmin 2");
+                                                Console.WriteLine("Wiedźmin 3");
                                                 break;
                                             case 3:
-                                                CategoriesBase.ShowCategories(categories);
+                                                Console.WriteLine("Our FPS games: ");
+                                                Console.WriteLine("CS:GO");
+                                                Console.WriteLine("Rainbow Six Siege");
+                                                Console.WriteLine("Overwatch");
+                                                Console.WriteLine("Call Of Duty: Modern Warfare");
                                                 break;
                                             case 4:
-                                                CategoriesBase.ShowCategories(categories);
+                                                Console.WriteLine("Our Action Games:");
+                                                Console.WriteLine("GTA V");
+                                                Console.WriteLine("Star Wars: Battlefront 2");
+                                                Console.WriteLine("Dying Light");
+                                                Console.WriteLine("Left 4 Dead 2");
                                                 break;
+                                            case 5:
+                                                GamesBase.ShowGames(games);
                                             case 0:
                                                 Console.Clear();
                                                 back = true;
