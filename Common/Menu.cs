@@ -38,6 +38,7 @@ namespace Game_Store
             Console.WriteLine("[2] RPG");
             Console.WriteLine("[3] FPS");
             Console.WriteLine("[4] Action");
+            Console.WriteLine("[5] All games with details");
             Console.WriteLine("[0] Return to the main menu.");
         }
     }
