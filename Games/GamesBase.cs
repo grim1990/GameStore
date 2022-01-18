@@ -21,6 +21,7 @@ namespace Game_Store
 
         public GamesBase()
         {
+            if (_games == null)
             _games = GamesSample.CreateGamesSample();
         }
 
@@ -51,7 +52,6 @@ namespace Game_Store
                 Console.WriteLine(i);
             }
         }
-
 
         public static void SaveOrUpdateSoldGame(List<Games> games)
         {

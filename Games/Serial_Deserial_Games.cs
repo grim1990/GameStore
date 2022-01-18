@@ -18,6 +18,15 @@ namespace Game_Store
         {
             ISerialize<Games> xmlSerialize = new XmlSerializer<Games>(@".\gamesXML.xml");
             GamesBase._games = xmlSerialize.Deserialize();
+
+            if (GamesBase._games == null)
+            {
+                GamesBase.GetInstance();
+            }
+            else if (GamesBase._games.Count() == 0)
+            {
+                GamesBase._games = GamesSample.CreateGamesSample();
+            }
         }
     }
 }

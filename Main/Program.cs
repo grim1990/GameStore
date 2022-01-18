@@ -14,7 +14,6 @@ namespace Game_Store
 
             Serial_Deserial_Games.Deserialize();
 
-           // GamesBase.GetInstance();
             CustomerBase.GetInstance();
             
             List<Customer> customers = new List<Customer>();
@@ -81,7 +80,6 @@ namespace Game_Store
                                     Console.Clear();
                                     // Sell game
                                     GamesBase.SellGame();
-                                    
                                     Console.Clear();
                                     break;
                                 case 3:
