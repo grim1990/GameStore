@@ -17,7 +17,6 @@ namespace Game_Store
             CustomerBase.GetInstance();
             
             List<Customer> customers = new List<Customer>();
-           // List<Categories> categories = new List<Categories>();
             List<Games> games = new List<Games>();
 
             while (!exit)
@@ -83,8 +82,8 @@ namespace Game_Store
                                     Console.Clear();
                                     break;
                                 case 3:
-                                    // not implemented -----------------------------------------------
                                     Console.Clear();
+                                    // Show all categories
                                     while (!back)
                                     {
                                         menu.MainMenuCategories();
@@ -120,9 +119,6 @@ namespace Game_Store
                                                 break;
                                         }
                                     }
-                                    // Show all categories
-                                    //Console.WriteLine("Categories: \n");
-                                    //CategoriesBase.ShowCategories(categories);
                                     break;
                                 case 0:
                                     Console.Clear();

@@ -11,7 +11,7 @@ namespace Game_Store
         public void MainMenu()
         {
             Console.WriteLine("Choose action number:\n");
-            Console.WriteLine("[1] Start Auction.");
+            Console.WriteLine("[1] NOT IMPLEMENTED.");
             Console.WriteLine("[2] Customer options.");
             Console.WriteLine("[3] Games options.");
             Console.WriteLine("[0] Close application.");
