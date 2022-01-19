@@ -25,21 +25,24 @@ namespace Game_Store
             _customers = CustomerSample.CreateCustomer();
         }
 
-        public static int IDGenerator()
+        public static int CustomerIDGenerator()
         {
             Random rnd = new Random();
-            int ID = rnd.Next(6, 100); // creates a number between 6 and 100
+            int ID = rnd.Next(1, 30); // creates a number between 1 and 30
 
-            // not implemented -----------------------------------------------
-            /* if (_list.Contains(ID))
-             {
-                 //duplicate number
-                 ID = rnd.Next(101,9999);
-             }
-             else
-             {
-                 _list.Add(ID);
-             }*/
+            var IDs = _customers.Where(IDs => IDs.id == ID).ToArray();
+
+            foreach (var idei in IDs)
+            {
+                if (idei.id == ID)
+                {
+                    ID = rnd.Next(31, 99999);
+                }
+                else
+                {
+                    return ID;
+                }
+            }
             return ID;
         }
 
@@ -48,7 +51,7 @@ namespace Game_Store
             List<Customer> list = new List<Customer>();
             Customer customer = new Customer();
 
-            customer.id = CustomerBase.IDGenerator();
+            customer.id = CustomerIDGenerator();
             customer.Name = Common.GetString("Enter name:");
             customer.Surname = Common.GetString("Enter surname: ");
             customer.Address = Common.GetString("Enter address: ");
@@ -57,7 +60,36 @@ namespace Game_Store
             customer.LoyalCard = Common.GetConfirm("Enter if customer got Loyal Card: Yes[Y] or No[N] ");
 
             list.Add(customer);
-            CustomerBase.SaveOrUpdateCustomer(list);
+            SaveOrUpdateCustomer(list);
+        }
+
+        public static void RemoveCustomer()
+        {
+            List<Customer> customers = new List<Customer>();
+            ShowCustomer(customers);
+
+            bool back = false;
+            while (!back)
+            {
+                int input = Common.GetInt("Enter CUSTOMER ID number to remove customer or return to the previouse menu [0].\n", "Please select CUSTOMER ID number.");
+
+                if (input != 0)
+                {
+                    var CustomerRemover = _customers.Where(customer => customer.id == input).ToArray();
+
+                    foreach (var customer in CustomerRemover)
+                    {
+                        var CustomerSoldGame = _customers.Where(customer => customer.id == input).ToArray();
+
+                        _customers.Remove(customer);
+                        Console.WriteLine("\nCustomer {0} {1} has been removed from the shop.\n", customer.Name, customer.Surname);
+                    }
+                }
+                else if (input == 0)
+                {
+                    back = true;
+                }
+            }
         }
 
         public static void ShowCustomer(List<Customer> customers)

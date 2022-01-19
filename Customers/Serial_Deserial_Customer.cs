@@ -10,13 +10,13 @@ namespace Game_Store
     {
         public static void Serialize()
         {
-            ISerialize<Customer> xmlSerialize = new XmlSerializer<Customer>(@".\customerXML.xml");
+            ISerialize<Customer> xmlSerialize = new XmlSerializer<Customer>(@".\gcustomerXML.xml");
             xmlSerialize.Serialize(CustomerBase._customers);
         }
 
         public static void Deserialize()
         {
-            ISerialize<Customer> xmlSerialize = new XmlSerializer<Customer>(@".\customerXML.xml");
+            ISerialize<Customer> xmlSerialize = new XmlSerializer<Customer>(@".\gcustomerXML.xml");
             CustomerBase._customers = xmlSerialize.Deserialize();
 
             if (CustomerBase._customers == null)

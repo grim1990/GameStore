@@ -28,7 +28,7 @@ namespace Game_Store
                 
                 switch (input)
                 {
-                    case 1:
+                    case 1://GUIDE OPTION
                         while (!back)
                         {
                             Console.Clear();
@@ -61,6 +61,11 @@ namespace Game_Store
                                     CustomerBase.AddNewCustomer();
                                     break;
                                 case 2:
+                                    Console.Clear();
+                                    // Remove customer
+                                    CustomerBase.RemoveCustomer();
+                                    break;
+                                case 3:
                                     Console.Clear();
                                     // Show all customers
                                     CustomerBase.ShowCustomer(customers);

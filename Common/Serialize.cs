@@ -35,9 +35,8 @@ namespace Game_Store
                 using TextWriter tw = new StreamWriter(_way);
                 serializer.Serialize(tw, list);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
                 return;
             }
         }
@@ -56,9 +55,8 @@ namespace Game_Store
                     result = (List<T>) objectt;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
                 return null;
             }
             return result;

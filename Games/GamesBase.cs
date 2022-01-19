@@ -25,28 +25,30 @@ namespace Game_Store
             _games = GamesSample.CreateGamesSample();
         }
 
-        public static int IDGenerator()
+        public static int IDGeneratorGames()
         {
             Random rnd = new Random();
-            int ID = rnd.Next(8, 100); // creates a number between 8 and 100
-            
-            // not implemented -----------------------------------------------
-           /* if (_list.Contains(ID))
+            int ID = rnd.Next(1, 30); // creates a number between 1 and 30
+
+            var IDs = _games.Where(IDs => IDs.id == ID).ToArray();
+
+            foreach (var idei in IDs)
             {
-                //duplicate number
-                ID = rnd.Next(999, 9999);
+                if (idei.id == ID)
+                {
+                   ID = rnd.Next(31,99999);
+                }
+                else
+                {
+                    return ID;
+                }
             }
-            else
-            {
-                _list.Add(ID);
-            }*/
             return ID;
         }
 
         public static void ShowGames(List<Games> games)
         {
             games = _games;
-
             foreach (Games i in games)
             {
                 Console.WriteLine(i);
@@ -56,7 +58,7 @@ namespace Game_Store
         public static void ShowGameTypesAction()
         {
             Console.WriteLine("Our Action Games: \n");
-            foreach (var item in GamesBase._games)
+            foreach (var item in _games)
             {
                 if (item.Type == "Action")
                 {
@@ -72,7 +74,7 @@ namespace Game_Store
         public static void ShowGameTypesFPS()
         {
             Console.WriteLine("Our FPS games: \n");
-            foreach (var item in GamesBase._games)
+            foreach (var item in _games)
             {
                 if (item.Type == "FPS")
                 {
@@ -88,7 +90,7 @@ namespace Game_Store
         public static void ShowGameTypesRPG()
         {
             Console.WriteLine("Our RPG games: \n");
-            foreach (var item in GamesBase._games)
+            foreach (var item in _games)
             {
                 if (item.Type == "RPG")
                 {
@@ -104,7 +106,7 @@ namespace Game_Store
         public static void ShowGameTypesSurvival()
         {
             Console.WriteLine("Our survival games: \n");
-            foreach (var item in GamesBase._games)
+            foreach (var item in _games)
             {
                 if (item.Type == "Survival")
                 {
@@ -134,8 +136,8 @@ namespace Game_Store
             {
                 Console.WriteLine("Enter what game customer would like to sell.\n");
 
-                game.id = IDGenerator();
-                game.Type = Common.GetGameType("Enter game type(RPG,Survival,FPS,Action): ");
+                game.id = IDGeneratorGames();
+                game.Type = Common.GetGameType("Enter game type([RPG],[Survival],[FPS],[Action]): ");
                 game.Name = Common.GetString("Enter game name: ");
                 game.Description = Common.GetString("Enter game description: ");
                 game.Price = Common.GetDouble("Enter game price: ");
@@ -171,7 +173,7 @@ namespace Game_Store
                            newprice = 0;
                        }
                     }
-                   GamesBase.SaveOrUpdateSoldGame(list);
+                   SaveOrUpdateSoldGame(list);
                    newprice = 0;
                    back = true;
                 }

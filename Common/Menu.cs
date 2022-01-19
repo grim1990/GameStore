@@ -20,7 +20,8 @@ namespace Game_Store
         {
             Console.WriteLine("Choose action number:\n");
             Console.WriteLine("[1] Add customer.");
-            Console.WriteLine("[2] Show customers.");
+            Console.WriteLine("[2] Remove customer.");
+            Console.WriteLine("[3] Show customers.");
             Console.WriteLine("[0] Return to the previous menu.");
         }
         public void MainMenuGames()
