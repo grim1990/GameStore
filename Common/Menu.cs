@@ -11,7 +11,7 @@ namespace Game_Store
         public void MainMenu()
         {
             Console.WriteLine("Choose action number:\n");
-            Console.WriteLine("[1] Welcome menu.");
+            Console.WriteLine("[1] Check the guide.");
             Console.WriteLine("[2] Customer options.");
             Console.WriteLine("[3] Games options.");
             Console.WriteLine("[0] Close application.");
@@ -44,8 +44,16 @@ namespace Game_Store
 
         public void MainMenuWelcome()
         {
-            Console.WriteLine(" Welcome to ---Game_Shop---\n\n");
+            Console.WriteLine("              Welcome to ---Game_Shop---\n\n");
             Console.WriteLine(" In this App you will be able to create your Customer account, \n buy and sell games and browse to find a game just for you. \n");
+        }
+
+        public void MainMenuGuide()
+        {
+            Console.WriteLine("              Welcome to the Guide!\n\n");
+            Console.WriteLine("In order to procceed choose from keybord specific digit \nmostly from [0] to [5] as in instruction \n");
+            Console.WriteLine("Sometimes you could be asked to input specific word \nlike type of a game [RPG]/[FPS] or confirm specific action \nlike [Y]/[N] refer to YES or NO\n");
+            Console.WriteLine("Furthermore just follow the instruction and have fun!\n");
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Game_Store
             while (!exit)
             {
                 //show menu and switch case options
+                
                 menu.MainMenuWelcome();
                 menu.MainMenu();
                 int input = Common.GetInt("Select: ", "Please select number from [0] to [3].");
@@ -28,10 +29,24 @@ namespace Game_Store
                 switch (input)
                 {
                     case 1:
-                        Console.Clear();
-                        menu.MainMenuWelcome();
+                        while (!back)
+                        {
+                            Console.Clear();
+                            menu.MainMenuGuide();
+                            int input1 = Common.GetInt("Please select number [0] and return to the main menu.", "");
+                            switch (input1)
+                            {
+                                case 0:
+                                    Console.Clear();
+                                    back = true;
+                                 break;
+                                 default:
+                                 Console.WriteLine("Wrong input - try again.");
+                                 break;
+                            }
+                            
+                        }
                         break;
-
                     case 2://CUSTOMER OPTIONS
                         Console.Clear();
                         while (!back)
