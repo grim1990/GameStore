@@ -9,7 +9,7 @@ namespace Game_Store
     class CustomerBase
     {
 
-        public static CustomerBase _instance;
+        private static CustomerBase _instance;
         public static List<Customer> _customers;
 
         public static CustomerBase GetInstance()
@@ -21,6 +21,7 @@ namespace Game_Store
 
         public CustomerBase()
         {
+            if (_customers == null)
             _customers = CustomerSample.CreateCustomer();
         }
 

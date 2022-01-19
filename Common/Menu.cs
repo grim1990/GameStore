@@ -11,7 +11,7 @@ namespace Game_Store
         public void MainMenu()
         {
             Console.WriteLine("Choose action number:\n");
-            Console.WriteLine("[1] NOT IMPLEMENTED.");
+            Console.WriteLine("[1] Welcome menu.");
             Console.WriteLine("[2] Customer options.");
             Console.WriteLine("[3] Games options.");
             Console.WriteLine("[0] Close application.");
@@ -40,6 +40,11 @@ namespace Game_Store
             Console.WriteLine("[4] Action");
             Console.WriteLine("[5] All games with details");
             Console.WriteLine("[0] Return to the main menu.");
+        }
+
+        public void MainMenuWelcome()
+        {
+            Console.WriteLine("Welcome to ---Game_Shop---\n\n");
         }
     }
 }

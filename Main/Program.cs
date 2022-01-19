@@ -13,8 +13,7 @@ namespace Game_Store
             Menu menu = new Menu();
 
             Serial_Deserial_Games.Deserialize();
-
-            CustomerBase.GetInstance();
+            Serial_Deserial_Customer.Deserialize();
             
             List<Customer> customers = new List<Customer>();
             List<Games> games = new List<Games>();
@@ -29,7 +28,7 @@ namespace Game_Store
                 {
                     case 1:
                         Console.Clear();
-                        // not implemented------------------------------------------------
+                        menu.MainMenuWelcome();
                         break;
 
                     case 2://CUSTOMER OPTIONS
@@ -132,6 +131,7 @@ namespace Game_Store
                         }
                         break;
                     case 0: //EXIT OPTION
+                        Serial_Deserial_Customer.Serialize();
                         Serial_Deserial_Games.Serialize();
                         exit = true;
                         break;
