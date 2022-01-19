@@ -21,6 +21,7 @@ namespace Game_Store
             while (!exit)
             {
                 //show menu and switch case options
+                menu.MainMenuWelcome();
                 menu.MainMenu();
                 int input = Common.GetInt("Select: ", "Please select number from [0] to [3].");
                 

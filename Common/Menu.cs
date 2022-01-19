@@ -44,7 +44,8 @@ namespace Game_Store
 
         public void MainMenuWelcome()
         {
-            Console.WriteLine("Welcome to ---Game_Shop---\n\n");
+            Console.WriteLine(" Welcome to ---Game_Shop---\n\n");
+            Console.WriteLine(" In this App you will be able to create your Customer account, \n buy and sell games and browse to find a game just for you. \n");
         }
     }
 }
